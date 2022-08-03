@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Money Tree</title>
+  <title>MoneyTree</title>
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Maven%20Pro" rel="stylesheet" />
@@ -33,10 +34,16 @@
         <div class="row-80">
           <h1 id="summary-header">DAILY SUMMARY</h1>
           <br><span style="background-color: #d9f48cff"id="date"></span>
-          <br><p>Income:<input type="inexp" name="moneyamount" placeholder="Income here" />
-          Expenses:<input type="inexp" name="moneyamount" placeholder="Expenses here" /> Estimated Expenses:<input type="inexp" name="moneyamount" placeholder="EsExpenses here" />
-          <br>Savings<input type="inexp" name="moneyamount" placeholder="Savings here" />  <br>Estimated Savings<input type="inexp" name="moneyamount" placeholder="EsSavings here" /> 
-            </p>
+          <br>
+          <p>
+            Income:<input id="incomeSummary" class="short-input" type="inexp" name="moneyamount" readonly/>  
+            <br>
+            Expenses:<input id="expenseSummary" class="short-input" type="inexp" name="moneyamount" readonly/> 
+            Estimated Expenses:<input id="estExpenseSummary" class="short-input" type="inexp" name="moneyamount" readonly/>
+            <br>
+            Savings:<input id="savingSummary" class="short-input" type="inexp" name="moneyamount" readonly/>  
+            Estimated Savings:<input id="estSavingSummary" class="short-input" type="inexp" name="moneyamount" readonly/> 
+          </p>
         </div>
       <button class="history">History</button>
         
@@ -93,7 +100,10 @@
   <script type="text/javascript" src="script.js"></script>
 
   <footer id="footer">
-    This is the footer
+    <div>
+      <h3>About
+      <br>MoneyTree is a collaborative project created during CSSI to assist with managing a budget for financial stability.</h3>
+    </div>
   </footer>
 </body>
 
