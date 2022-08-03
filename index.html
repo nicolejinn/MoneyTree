@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Money Tree</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Maven%20Pro" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Square+Peg&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="heading">
+  <header>
+    <div id="banner">
+      <h1><b>Money Tree<sup>TM</sup></b></h1>
+      <h2>Because money doesn't grow on trees.</h2>
+    </div>
+  </header>
+  <nav>
+    <div><button type="button" class="selected" id="daily-sum-button"> DAILY SUMMARY</button></div>
+    <div><button type="button" id="log-button" class="">LOG</button></div>
+    <div><button type="button" id="about-us-button">ABOUT US</button></div>
+  </nav>
+  </div>
+  
+ <section id="daily-summary">
+      <div class="card">
+        <div class="row-40">
+          <h1 id="hello" style="background-colour: #d9f48cf;">Hello,</br></h1>
+          <br><p>placeholder username !</br></p>
+        </div>
+        <div class="row-80">
+          <h1 id="summary-header">DAILY SUMMARY</h1>
+          <br><span style="background-color: #d9f48cff"id="date"></span>
+          <br><p>Income:<input type="inexp" name="moneyamount" placeholder="Income here" />
+          Expenses:<input type="inexp" name="moneyamount" placeholder="Expenses here" /> Estimated Expenses:<input type="inexp" name="moneyamount" placeholder="EsExpenses here" />
+          <br>Savings<input type="inexp" name="moneyamount" placeholder="Savings here" />  <br>Estimated Savings<input type="inexp" name="moneyamount" placeholder="EsSavings here" /> 
+            </p>
+        </div>
+      <button class="history">History</button>
+        
+    </div>
+  </section>
+
+ <section id="log">
+    <div class="container">
+
+      <h1 id="log-header">LOG</h1>
+
+      <hr width="100%"/>
+
+      <div class="horizontal-container">
+        <div class="col-75">
+          <div class="col-25">
+            <label for="select-types">Select Logging Types</label>
+          </div>
+          <div class="col-75">
+            <select name="select" id="select-types">
+              <option value="select">Select...</option>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-25">
+          <div class="col-10">
+            <label for="amount-input" class="input-label">$</label>
+          </div>
+          <div class="col-80">
+            <input id="amount-input" type="text" name="moneyamount" placeholder="Amount" />
+          </div>
+        </div>
+      </div>
+
+      <div class="horizontal-container">
+        <div class="col-85">
+          <div class="col-15">
+            <label for="description-input" class="input-label">Description</label>
+          </div>
+          <div class="col-85">
+            <input id="description-input" type="text" name="description" placeholder="Optional" />
+          </div>
+        </div>
+        <div class="col-15" id="left-border">
+          <button id="save-button">Save Log</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="script.js"></script>
+
+  <footer id="footer">
+    This is the footer
+  </footer>
+</body>
+
+</html>
