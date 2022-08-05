@@ -5,43 +5,79 @@ const dailySumButton = document.querySelector("#daily-sum-button");
 const navLogButton = document.querySelector("#log-button");
 const aboutButton = document.querySelector("#about-us-button");
 
-dailySumButton.addEventListener('click', (e) => {
+function selectDailySum(){
   dailySumButton.classList.add("selected");
   navLogButton.classList.remove("selected");
   aboutButton.classList.remove("selected");
   location.href ="#daily-summary";
-});
+}
 
-navLogButton.addEventListener('click', (e) => {
+function selectLog(){
   dailySumButton.classList.remove("selected");
   navLogButton.classList.add("selected");
   aboutButton.classList.remove("selected");
   location.href ="#log";
-});
+}
 
-aboutButton.addEventListener('click', (e) => {
+function selectAbout(){
   dailySumButton.classList.remove("selected");
   navLogButton.classList.remove("selected");
   aboutButton.classList.add("selected");
   location.href ="#footer";
+}
+
+dailySumButton.addEventListener('click', (e) => {
+  selectDailySum();
+});
+
+navLogButton.addEventListener('click', (e) => {
+  selectLog();
+});
+
+aboutButton.addEventListener('click', (e) => {
+  selectAbout();
 });
 
 // When the user scrolls the page, execute navAnimation
 window.onscroll = function() { navAnimation() };
-
 // Get the navbar
 const navbar = document.getElementById("navbar");
-
 // Get the offset position of the navbar
 const sticky = navbar.offsetTop;
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+const dailySum = document.getElementById("summary-header");
+const dailySumPos = dailySum.offsetTop;
+
+const log = document.getElementById("log-header");
+const logPos = dailySum.offsetTop;
+
+const about = document.getElementById("about");
+const aboutPos = dailySum.offsetTop;
+
 function navAnimation() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
   } else {
     navbar.classList.remove("sticky");
   }
+  
+  if (window.pageYOffset <= dailySumPos && window.pageYOffset < logPos){
+    dailySumButton.classList.add("selected");
+    navLogButton.classList.remove("selected");
+    aboutButton.classList.remove("selected");
+  }
+  
+  if (window.pageYOffset >= logPos && window.pageYOffset > dailySumPos){
+    dailySumButton.classList.remove("selected");
+    navLogButton.classList.add("selected");
+    aboutButton.classList.remove("selected");
+  }
+  
+ if (window.pageYOffset >= aboutPos && window.pageYOffset > logPos ){
+    dailySumButton.classList.remove("selected");
+    navLogButton.classList.remove("selected");
+    aboutButton.classList.add("selected");
+      }
 }
 
 // to retrive current date
@@ -60,6 +96,8 @@ const amountInField = document.querySelector("#amount-input");
 const descriptInField = document.querySelector("#description-input");
 const logButton = document.querySelector("#save-button");
 
+const errorMsg = document.querySelector("#error");
+
 const incSum = document.querySelector("#incomeSummary");
 const expSum = document.querySelector("#expenseSummary");
 const estExpSum = document.querySelector("#estExpenseSummary");
@@ -70,14 +108,15 @@ updateSummary();
 
 logButton.addEventListener("click", (e) => {
   let amount = parseFloat(amountInField.value);
-  if (isNaN(amount)) {
-    //alarm
-  } else if (amount < 0) {
-    //alarm
+  if (isNaN(amount) || amount < 0) {
+    errorMsg.classList.remove("hidden");
+    amountInField.value = "";
+    amountInField.placeholder = "Please input a positive number."
   } else {
     switch (inputTypeField.value) {
     case "select":
-      // alarm
+      errorMsg.classList.remove("hidden");
+      inputTypeField.style.borderColor = "red";
       break;
     case "income":
       updateValues(amount, "income");
@@ -101,6 +140,7 @@ function updateValues(amount, type) {
     dailyExpense += amount;
     expenseHistory.push.apply(expenseHistory, [[amount, description]]);
   }
+  errorMsg.classList.add("hidden");
   console.log(dailyExpense);
   console.log(expenseHistory);
   updateSummary();
@@ -114,3 +154,22 @@ function updateSummary() {
   estExpSum.value = "NA";
   estSavingSum.value = "NA";
 }
+
+//modal 
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".history");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);

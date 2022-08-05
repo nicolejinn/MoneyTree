@@ -28,8 +28,8 @@ h2 {
 
 h3{
   font-family: 'Maven Pro';
-  font-size: 16px;
-  text-align: center;
+  font-size: 15px;
+  text-align: left;
 }
 
 p {
@@ -166,6 +166,18 @@ section {
   justify-content: center;
 }
 
+.col-30 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+}
+
+.col-70 {
+  float: left;
+  width: 70%;
+  margin-top: 6px;
+}
+
 .col-25 {
   float: left;
   width: 25%;
@@ -231,8 +243,6 @@ input[type=text] {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid black;
   font-family: Maven Pro, sans-serif;
   font-size: 15px;
 }
@@ -242,19 +252,23 @@ input[type=text]:focus {
 }
 
 .short-input {
-  width: 15%;
+  width: 14%;
 }
 
 #description-input {
   width: 90%;
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 #amount-input {
   width: 80%;
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 select {
-  width: 75%;
+  width: 80%;
   padding: 10px 10px;
 
   border: none;
@@ -339,6 +353,11 @@ footer {
   font-family: Lato, sans-serif;
   margin-bottom: -10px;
 }
+
+#error {
+  color: red;
+}
+
 span {
   font-family: 'Maven Pro';
   font-size: 20px;
@@ -352,7 +371,62 @@ input[type=inexp] {
   font-size: 15px;
 }
 
-footer div{
+.hidden {
+  display: none;
+}
+
+footer div {
   padding-left: 130px;
   padding-right: 130px;
+  text-align: left;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+#history-modal {
+  font-size: 30px;
+  font-family: Lato, sans-serif;
 }
