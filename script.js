@@ -46,13 +46,10 @@ const navbar = document.getElementById("navbar");
 const sticky = navbar.offsetTop;
 
 const dailySum = document.getElementById("summary-header");
-const dailySumPos = dailySum.offsetTop;
+const dailySumPos = dailySum.offsetTop + dailySum.offsetHeight/2;
 
 const log = document.getElementById("log-header");
-const logPos = dailySum.offsetTop;
-
-const about = document.getElementById("about");
-const aboutPos = dailySum.offsetTop;
+const logPos = (log.offsetTop + log.offsetHeight)/2;
 
 function navAnimation() {
   if (window.pageYOffset >= sticky) {
@@ -60,24 +57,20 @@ function navAnimation() {
   } else {
     navbar.classList.remove("sticky");
   }
-  
-  if (window.pageYOffset <= dailySumPos && window.pageYOffset < logPos){
+
+  if (dailySumPos > window.pageYOffset) {//daily summary
     dailySumButton.classList.add("selected");
     navLogButton.classList.remove("selected");
     aboutButton.classList.remove("selected");
-  }
-  
-  if (window.pageYOffset >= logPos && window.pageYOffset > dailySumPos){
+  } else if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) { // about us
+    dailySumButton.classList.remove("selected");
+    navLogButton.classList.remove("selected");
+    aboutButton.classList.add("selected");
+  } else{ // log
     dailySumButton.classList.remove("selected");
     navLogButton.classList.add("selected");
     aboutButton.classList.remove("selected");
   }
-  
- if (window.pageYOffset >= aboutPos && window.pageYOffset > logPos ){
-    dailySumButton.classList.remove("selected");
-    navLogButton.classList.remove("selected");
-    aboutButton.classList.add("selected");
-      }
 }
 
 // to retrive current date
