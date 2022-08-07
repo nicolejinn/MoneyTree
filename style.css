@@ -1,3 +1,4 @@
+/* Doccument Styling */
 html, body {
   height: 100%;
   width: 100%;
@@ -8,6 +9,7 @@ html, body {
   flex-wrap: wrap;
 }
 
+/* Text Styling */
 sup {
   font-size: 30px;
 }
@@ -37,6 +39,7 @@ p {
   font-size: 20px;
 }
 
+/* Heading Styling */
 header {
   background-image: linear-gradient(225deg, #d9f48cff, #d9f48cff);
   padding: 60px;
@@ -50,6 +53,7 @@ header {
   border-width: 1px;
 }
 
+/* Navbar Styling */
 nav {  
   height: 40px;
   width:100%;
@@ -101,29 +105,42 @@ nav button:hover{
   width: 100%;
 }
 
+/* Section Styling*/
 section {
   padding: 60px 0px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  width: 80%;
+  width: 100%;
+  padding-bottom: 10px;
 }
 
 .card {
   margin: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: -40px;
+  margin-left: 10px;
+  margin-right: 10px;
   
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  min-height: 360px;
+  width: 65%;
+  min-height: 300px;
   background-color: white;
 
   border: 1px solid black;  
   border-radius: 55px;
   padding: 40px 100px;
+}
+
+/*To be edited*/
+#log {
+  
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#daily-summary {
+  font-size: 30px;
+  font-family: Lato, sans-serif;
+  margin-bottom: -10px;
 }
 
 #log-header {
@@ -136,27 +153,6 @@ section {
   font-size: 30px;
   font-family: Lato, sans-serif;
   margin-bottom: -20px;
-}
-
-#log{
-  width: 80%;
-}
-
-.container {
-  margin: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 90%;
-  min-height: 300px;
-  background-color: white;
-
-  border: 1px solid black;  
-  border-radius: 55px;
-  padding: 40px 100px;
 }
 
 .horizontal-container {
@@ -316,7 +312,8 @@ button:hover {
 .row-40 {
   float: left;
   width: 40%;
-  margin-top: 6px;}
+  margin-top: 6px;
+}
 
 footer {
   background-image: linear-gradient(225deg, #d9f48cff, #d9f48cff);
@@ -342,16 +339,11 @@ footer {
   display: inline-block;
   font-size: 16px;
 }
+
 #hello {
   font-size: 80px;
   font-family: Dancing Script, cursive;
   margin-bottom: -40px;
-}
-
-#daily-summary {
-  font-size: 30px;
-  font-family: Lato, sans-serif;
-  margin-bottom: -10px;
 }
 
 #error {
