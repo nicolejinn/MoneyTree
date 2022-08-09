@@ -11,19 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Maven%20Pro" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Square+Peg&display=swap"
     rel="stylesheet">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <script>
-      $(function(){
-        $("#header").load("htmls/header.html");
-        $("#navbar").load("htmls/nav.html");
-        $("#daily-summary-section").load("htmls/dailySummary.html");
-        $("#log-section").load("htmls/log.html");
-        $("#footer").load("htmls/about.html");
-      });
-    </script>
-  
+  <script type="text/javascript" src="scripts/loadHTML.js"></script>
+  <script defer type="text/javascript" src="scripts/loadScript.js"></script>
 </head>
 
 <body>
@@ -42,7 +31,7 @@
   <!--FOOTER -->
   <footer id="footer"></footer>
 
-  <script type="text/javascript" src="scripts/loadScript.js"></script>
+
 </body>
 
 </html>
