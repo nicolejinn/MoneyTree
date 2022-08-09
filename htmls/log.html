@@ -1,0 +1,45 @@
+<div id="log" class="card">
+
+  <h1 id="log-header">LOG</h1>
+
+  <hr width="100%" />
+
+  <div class="horizontal-container">
+    <div class="col-75">
+      <div class="col-30">
+        <label for="select-types">Select Logging Types</label>
+      </div>
+      <div class="col-70">
+        <select name="select" id="select-types">
+          <option value="select">Select...</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-25">
+      <div class="col-10">
+        <label for="amount-input" class="input-label">$</label>
+      </div>
+      <div class="col-80">
+        <input id="amount-input" type="text" name="moneyamount" class="error" placeholder="Amount" />
+        <p id="error" class="hidden">X</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="horizontal-container">
+    <div class="col-85">
+      <div class="col-15">
+        <label for="description-input" class="input-label">Description</label>
+      </div>
+      <div class="col-85">
+        <input id="description-input" type="text" name="description" placeholder="Optional" />
+      </div>
+    </div>
+    <div class="col-15" id="left-border">
+      <button id="save-button">Save Log</button>
+    </div>
+  </div>
+</div>
