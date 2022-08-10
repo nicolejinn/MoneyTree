@@ -18,5 +18,4 @@ function loadFile(elmntID, file) {
     });
 
     xhr.send(null); 
-
 }
